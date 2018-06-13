@@ -37,7 +37,12 @@ $(copyInput).on('keyup blur change', function(){
   copy.text(copyInput.val());
 });
 $(callToActionInput).on('keyup blur change', function(){
-  callToAction.text(callToActionInput.val());
+  if (!callToActionInput.val()) {
+    callToAction.hide();
+  } else {
+    callToAction.show();
+    callToAction.text(callToActionInput.val());
+  }
 });
 
 // active class for the clicked option
